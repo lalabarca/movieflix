@@ -1,0 +1,6 @@
+<%= simple_form_for [list, bookmark] do |f| %>
+  <%= f.association :list, label: "Nom de la liste" %>
+  <%= f.association :movie, label: "Film à ajouter" %>
+  <%= f.input :comment, label: "Commentaire" %>
+  <%= f.submit "Ajouter un film", class: "btn btn-success" %>
+<% end %>

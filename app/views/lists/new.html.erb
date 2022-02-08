@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Je crée ma liste</h1>
+  <%= simple_form_for @list do |f| %>
+    <%= f.input :name, label: "Nom de la liste", placeholder: "Western, Drame, etc." %>
+    <%= f.input :photo, as: :file, label: "Image d'illustration" %>
+    <%= f.submit 'Créer ma liste', class:"btn btn-success"  %>
+  <% end %>
+</div>
