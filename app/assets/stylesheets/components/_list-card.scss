@@ -1,0 +1,48 @@
+.list-card {
+  height: 180px;
+  border-radius: $radius-custom;
+  box-shadow: $box-shadow;
+  padding: 0 1.4rem;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease-out;
+
+  .link-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  h3 {
+  margin-bottom: 1.5rem;
+  color: #fff;
+  }
+
+  ul {
+    display: flex;
+    justify-content: end;
+    list-style: none;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    li {
+      width: 55px;
+      height: 55px;
+      border-radius: $radius-custom;
+      box-shadow: $shadow-white;
+      background-size: cover;
+      margin-left: 1rem;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+}

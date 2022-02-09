@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# puts "Deleting all movies..."
+# Movie.destroy_all
+
 require "json"
 require "open-uri"
 

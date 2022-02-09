@@ -1,0 +1,22 @@
+<div class="col-12 col-md-6 col-lg-4">
+  <div class="list-card" style="background-image: linear-gradient(rgba(20,24,28,0.4),rgba(20,24,28,0.4)), url('<%= cl_image_path list.photo.key %>');">
+    <h3><%= list.name %></h3>
+
+    <%# Delete link %>
+    <div class="d-flex justify-content-between align-items-end">
+      <% if list.user == current_user %>
+        <%= link_to list_path(list), method: :delete, data: { confirm: "Voulez vous supprimer la liste #{list.name} ?"}, class: "d-btn" do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
+      <% end %>
+      <% unless list.movies.empty? %>
+        <ul>
+          <% list.movies.order(created_at: :desc).each do |movie| %>
+            <li style="background-image: url('<%= image_path movie.poster_url %>');"></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+    <%= link_to "", list_path(list), class: "link-card" %>
+  </div>
+</div>

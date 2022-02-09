@@ -1,0 +1,24 @@
+<div class="col-12 col-md-6">
+  <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+  <div class="bookmark-card" id="bookmark-<%= bookmark.id %>">
+    <figure>
+      <%= image_tag movie.poster_url %>
+    </figure>
+    <div class="bookmark-body">
+      <h3><%= movie.title %></h3>
+      <p><%= movie.overview.truncate(140) %></p>
+      <p class="rating"><i class="fas fa-star"></i><%= movie.rating %></p>
+      <article>
+        <p><%= bookmark.comment %></p>
+        <div class="d-flex justify-content-end align-items-center">
+          <%= link_to edit_bookmark_path(bookmark), class:"e-btn" do %>
+            <i class="fas fa-pen"></i>
+          <% end %>
+          <%= link_to bookmark_path(bookmark), method: :delete, data: { confirm: "Voulez-vous supprimer '#{movie.title}' de #{@list.name} ?"}, class:"d-btn" do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>

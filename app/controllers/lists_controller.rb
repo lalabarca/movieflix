@@ -1,8 +1,8 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: :show
+  before_action :set_list, only: [:show, :destroy]
 
   def index
-    @lists = List.all
+    @lists = current_user.lists.includes(:movies)
   end
 
   def show
@@ -23,6 +23,11 @@ class ListsController < ApplicationController
       flash.alert = "Erreur: votre liste ne peut être créée."
       render :new
     end
+  end
+
+  def destroy
+    @list.destroy
+    redirect_to lists_path
   end
 
   private

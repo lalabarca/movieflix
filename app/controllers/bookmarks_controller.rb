@@ -1,15 +1,15 @@
 class BookmarksController < ApplicationController
-  before_action :set_list, only: [:create, :update, :edit]
-  before_action :set_bookmark, only: [:edit, :update]
+  before_action :set_list, only: :create
+  before_action :set_bookmark, only: [:edit, :update, :destroy]
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
     @bookmark.list = @list
     if @bookmark.save
-      flash.notice "Film ajouté à #{@list.name}."
-      redirect_to list_path(@list)(anchor: "bookmarks")
+      flash.notice = "Film ajouté à #{@list.name}"
+      redirect_to list_path(@list, anchor: "bookmark-#{@bookmark.id}")
     else
-      flash.alert "Erreur: impossible d'ajouter le film."
+      flash.alert = "Erreur: impossible d'ajouter le film."
       redirect_to 'lists/show'
     end
   end
@@ -20,12 +20,17 @@ class BookmarksController < ApplicationController
   def update
     @bookmark.update(bookmark_params)
     if @bookmark.save
-      flash.notice "Film modifié !"
-      redirect_to list_path(@list)(anchor: "bookmarks")
+      flash.notice = "Film modifié !"
+      redirect_to list_path(@bookmark.list, anchor: "bookmark-#{@bookmark.id}")
     else
-      flash.alert "Erreur: modification annulée."
+      flash.alert = "Erreur: modification annulée."
       render :new
     end
+  end
+
+  def destroy
+    @bookmark.destroy
+    redirect_to list_path(@bookmark.list)
   end
 
   private
@@ -35,7 +40,7 @@ class BookmarksController < ApplicationController
   end
 
   def set_bookmark
-    @bookmark = Bookmark.find(params[id])
+    @bookmark = Bookmark.find(params[:id])
   end
 
   def bookmark_params

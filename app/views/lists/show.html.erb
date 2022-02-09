@@ -1,8 +1,14 @@
 <%= render "shared/banner-list", list: @list %>
-<section id="bookmarks">
+<section class="py-5 bookmarks">
   <div class="container">
-    <% if @list.bookmarks.empty? %>
+    <% if @list.movies.empty? %>
       <p>Cette liste est vide. Vous pouvez ajouter des films</p>
+    <% else %>
+      <div class="row">
+        <% @list.movies.each do |movie| %>
+          <%= render 'bookmarks/partial/bookmark-card', movie: movie  %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </section>

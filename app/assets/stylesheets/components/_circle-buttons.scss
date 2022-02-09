@@ -1,0 +1,41 @@
+.d-btn {
+  position: relative;
+  z-index: 2;
+  height: 37px;
+  width: 37px;
+  display: block;
+  background-color: #fff;
+  opacity: 0.8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: thin solid $third;
+  &:hover {
+    opacity: 1;
+  }
+  i {
+    color: $third;
+    font-size: 1rem;
+  }
+}
+
+.e-btn {
+  height: 37px;
+  width: 37px;
+  display: block;
+  background-color: rgba($secondary, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+
+  &:hover {
+    background-color: rgba($secondary, 1);
+  }
+  i {
+    color: #fff;
+    font-size: 1rem;
+  }
+}

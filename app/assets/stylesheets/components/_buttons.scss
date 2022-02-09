@@ -1,0 +1,15 @@
+.btn-first {
+  background: linear-gradient(to right, $first 0%, #CE4412  51%, $first 100%);
+  color: #fff;
+  border-radius: 50px;
+  padding: 0.6rem 1.3rem;
+  background-size: 200% auto;
+  transition: all 0.5s ease-out;
+
+  &:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+
+}

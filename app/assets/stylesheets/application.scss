@@ -11,3 +11,12 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+ul {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.4s ease-out;
+}
