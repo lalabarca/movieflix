@@ -11,7 +11,7 @@
       <% end %>
       <% unless list.movies.empty? %>
         <ul>
-          <% list.movies.order(created_at: :desc).each do |movie| %>
+          <% list.movies.order(created_at: :desc).limit(3).each do |movie| %>
             <li style="background-image: url('<%= image_path movie.poster_url %>');"></li>
           <% end %>
         </ul>

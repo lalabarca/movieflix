@@ -2,6 +2,21 @@
   justify-content: space-between;
   background: $black;
   padding: 10px 0;
+
+  .logout {
+    font-weight: 500;
+    i {
+      margin-right: 5px;
+      color: $first;
+    }
+  }
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+  &:hover {
+    color: $first;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {

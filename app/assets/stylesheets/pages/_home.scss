@@ -1,11 +1,4 @@
 // Specific CSS for your home-page
-body.home {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: $black;
-}
-
 .hero {
   background-image: url(https://res.cloudinary.com/dskz4h4td/image/upload/v1644361702/cover_movie-flix_lkt2ms.jpg);
   background-size: cover;
@@ -30,12 +23,15 @@ body.home {
   }
 
   h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.1rem;
+    font-size: 2.2rem;
   }
 
   h2 {
     opacity: 0.8;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.3rem;
+    font-size: 1.7rem;
+    font-family: $body-font;
   }
 
 }
@@ -61,9 +57,10 @@ body.home {
 
 .body-home {
   margin-top: 80px;
-  h3 {
+
+  h4 {
+    font-family: $body-font;
     color: #fff;
     margin-bottom: 2rem;
-    font-size: 1.6rem;
   }
 }

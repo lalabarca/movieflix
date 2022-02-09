@@ -1,0 +1,43 @@
+body.home, body.lists.index {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+body.home {
+  background-color: $black;
+}
+
+body.new {
+  background-color: $dark;
+}
+
+body.registrations {
+  .block-form p {
+    font-size: 1.1rem;
+  }
+}
+
+body.lists.index {
+  background-color:#fff;
+  h1 {
+    margin-bottom: 1.2rem;
+    color: $secondary;
+    font-weight: bold;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+}
+
+.my-lists {
+  flex-grow: 1;
+  background-color: $third;
+  padding: 3.5rem;
+}
+
+.block-form {
+  background-color: #fff;
+  border-radius: $radius-custom;
+  padding: 2rem;
+}

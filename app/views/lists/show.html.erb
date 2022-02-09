@@ -12,9 +12,14 @@
     <% end %>
   </div>
 </section>
-<section>
+<section class="add-bookmarks">
   <div class="container">
-    <h2>Ajouter un film</h2>
-    <%= render 'shared/form', list: @list, bookmark: @bookmark %>
+    <div class="row">
+      <div class="col-12 col-lg-8">
+        <div class="block-form">
+        <h2>Ajouter un film</h2>
+        <%= render 'shared/form', list: @list, bookmark: @bookmark %>
+      </div>
+    </div>
   </div>
 </section>

@@ -1,5 +1,5 @@
 <%= simple_form_for [list, bookmark] do |f| %>
   <%= f.association :movie, collection: Movie.all.order(:title), prompt: "Titre de film", label: "Film à ajouter" %>
   <%= f.input :comment, label: "Commentaire" %>
-  <%= f.submit "Ajouter un film", class: "btn btn-success" %>
+  <%= f.submit "Ajouter un film", class: "btn btn-first" %>
 <% end %>

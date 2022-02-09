@@ -1,9 +1,14 @@
 <div class="container">
-  <h1>Modifier le film</h1>
-  <%= simple_form_for @bookmark do |f| %>
-  <%= f.association :movie, collection: Movie.all.order(:title), prompt: "Titre de film", label: "Film à ajouter" %>
-  <%= f.input :comment, label: "Commentaire" %>
-  <%= f.submit "Modifier le film", class: "btn btn-success" %>
-<% end %>
-
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8 mt-5">
+      <div class="block-form">
+        <h1>Modifier le film</h1>
+          <%= simple_form_for @bookmark do |f| %>
+          <%= f.association :movie, collection: Movie.all.order(:title), prompt: "Titre de film", label: "Film à ajouter" %>
+          <%= f.input :comment, label: "Commentaire" %>
+          <%= f.submit "Modifier le film", class: "btn btn-first" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
