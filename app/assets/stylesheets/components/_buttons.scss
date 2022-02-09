@@ -1,5 +1,4 @@
-.btn-first {
-  background: linear-gradient(to right, $first 0%, #CE4412  51%, $first 100%);
+.btn-first, .btn-second {
   color: #fff;
   border-radius: 50px;
   padding: 0.6rem 1.3rem;
@@ -12,4 +11,12 @@
     text-decoration: none;
   }
 
+}
+
+.btn-first {
+  background: linear-gradient(to right, $first 0%, #CE4412  51%, $first 100%);
+}
+
+.btn-second {
+  background-color:$third;
 }

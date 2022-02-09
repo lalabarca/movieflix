@@ -2,8 +2,14 @@
   <div class="container">
     <h1>Tous vos films préférés au même endroit</h1>
     <h2>Créez des listes et ajoutez y vos critiques</h2>
-    <%= link_to new_list_path, class: "btn btn-first" do %>
-      <i class="fas fa-plus"></i>Créer une liste
+    <% if user_signed_in? %>
+      <%= link_to new_list_path, class: "btn btn-first" do %>
+        <i class="fas fa-plus"></i>Créer une liste
+      <% end %>
+    <% else %>
+      <%= link_to new_user_registration_path, class: "btn btn-first" do %>
+        <i class="fas fa-plus"></i>Créer une liste
+      <% end %>
     <% end %>
   </div>
   <div class="wrapper"></div>
