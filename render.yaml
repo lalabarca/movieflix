@@ -1,0 +1,19 @@
+services:
+  - name: watch-list
+    type: web
+    plan: free
+    env: ruby
+    buildCommand: bin/render-build.sh
+    startCommand: bundle exec rails s
+    envVars:
+      - key: SECRET_KEY_BASE
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: watch-list-db
+          property: connectionString
+
+databases:
+  - name: watch-list-db
+    plan: free
+    ipAllowList: []

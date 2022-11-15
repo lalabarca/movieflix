@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: movieflix_production
   username: movieflix
   password: <%= ENV['MOVIEFLIX_DATABASE_PASSWORD'] %>
