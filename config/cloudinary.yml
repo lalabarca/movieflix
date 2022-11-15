@@ -1,5 +1,5 @@
 production:
-  cloud_name: "dskz4h4td"
-  api_key: "384348917382634"
-  api_secret: "BVRDdhcFVw0dy4P8rGKL8XUcN7A"
+  cloud_name: <%= ENV['CLOUDINARY_CLOUD_NAME'] %>
+  api_key: <%= ENV['CLOUDINARY_API_KEY'] %>
+  api_secret: <%= ENV['CLOUDINARY_API_SECRET'] %>
   secure: true
