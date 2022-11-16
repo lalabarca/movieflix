@@ -13,7 +13,7 @@ services:
           name: movieflix-db
           property: connectionString
       - key: CLOUDINARY_URL
-        value: "cloudinary://384348917382634:BVRDdhcFVw0dy4P8rGKL8XUcN7A@dskz4h4td"
+        sync: false
 
 databases:
   - name: movieflix-db
